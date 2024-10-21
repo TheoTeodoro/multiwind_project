@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#speedometer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: conic-gradient(from 0deg at 50% 50%, red, yellow, green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.needle {
+  position: absolute;
+  width: 5px;
+  height: 100px;
+  background-color: black;
+  top: 50px;
+  left: 50%;
+  transform-origin: bottom;
+  transform: rotate(0deg);
+}
+
+.speed {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+.hidden {
+  display: none;
+}
+
+.result {
+  margin-top: 20px;
+}
