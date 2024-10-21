@@ -1,2 +1,3 @@
-el el el 
-o theo da o anel 
+Filipe Maciel Lopes
+Daniel Cristian 
+Theo Teodoro

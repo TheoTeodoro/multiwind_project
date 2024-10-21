@@ -38,9 +38,9 @@ h1 {
 .needle {
   position: absolute;
   width: 5px;
-  height: 100px;
+  height: 70px;
   background-color: black;
-  top: 50px;
+  bottom: 100px;
   left: 50%;
   transform-origin: bottom;
   transform: rotate(0deg);
@@ -75,4 +75,66 @@ button:hover {
 
 .result {
   margin-top: 20px;
+}
+
+.bugged-body {
+  background-image: repeating-linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+  animation: backgroundFlash 3s infinite alternate;
+}
+
+@keyframes backgroundFlash {
+  0% {
+    background-color: #f0f0f0;
+  }
+
+  100% {
+    background-color: #fff;
+  }
+}
+
+.bugged-container {
+  animation: shake 0.1s infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
+.bugged-title {
+  animation: glitch 2s infinite alternate;
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    text-shadow: 1px 1px red, -1px -1px blue;
+  }
+
+  50% {
+    text-shadow: -1px 1px red, 1px -1px blue;
+  }
+}
+
+.bugged-speed {
+  animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #ff0055;
+  }
+
+  50% {
+    color: #00ff00;
+  }
+
+  100% {
+    color: #0000ff;
+  }
 }
