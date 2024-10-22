@@ -8,13 +8,13 @@ const container = document.querySelector(".container");
 const titulo = document.querySelector(".title");
 
 const velocidadesFalsas = [
-  // "5000 bananas por segundo!",
-  // "Mais rápida que a luz!",
-  // "A velocidade de uma tartaruga com jetpack!",
-  // "A conexão de internet mais rápida de Marte!",
-  // "1 Giga por segundo... de paciência.",
-  // "Seu PC está prestes a explodir de tanta velocidade!",
-  // "Você atingiu a velocidade da preguiça!",
+  "5000 bananas por segundo!",
+  "Mais rápida que a luz!",
+  "A velocidade de uma tartaruga com jetpack!",
+  "A conexão de internet mais rápida de Marte!",
+  "1 Giga por segundo... de paciência.",
+  "Seu PC está prestes a explodir de tanta velocidade!",
+  "Você atingiu a velocidade da preguiça!",
   "Está usando Internet Explorer? Porque está lento demais!",
   "happy halloween!",
 ];
