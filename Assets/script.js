@@ -6,6 +6,8 @@ const textoResultado = document.getElementById("result-text");
 const body = document.body;
 const container = document.querySelector(".container");
 const titulo = document.querySelector(".title");
+const jumpscareImage = document.getElementById("jumpscareImage");
+const pardalImage = document.getElementById("pardalImage");
 
 const velocidadesFalsas = [
   "5000 bananas por segundo!",
@@ -17,6 +19,8 @@ const velocidadesFalsas = [
   "Você atingiu a velocidade da preguiça!",
   "Está usando Internet Explorer? Porque está lento demais!",
   "happy halloween!",
+  "Passe com sua internet aqui para medirmos sua velocidade!",
+  "Sua internet está obstruindo a via"
 ];
 
 botaoIniciar.addEventListener("click", () => {
@@ -40,37 +44,17 @@ botaoIniciar.addEventListener("click", () => {
 
 function mostrarResultado() {
   setTimeout(() => {
-    const resultadoAleatorio =
-    velocidadesFalsas[Math.floor(Math.random() * velocidadesFalsas.length)];
+    const resultadoAleatorio = velocidadesFalsas[Math.floor(Math.random() * velocidadesFalsas.length)];
     textoResultado.textContent = `Sua velocidade: ${resultadoAleatorio}`;
     secaoResultado.classList.remove("hidden");
 
     if (resultadoAleatorio.toLowerCase() === "happy halloween!") {
       aplicarEfeitosBugados();
-    }
-    else if (textoResultado.textContent.includes("Internet Explorer")) {
-        body.style.backgroundSize = "cover";
-        body.style.backgroundPosition = "center"; 
-        const jumpscareImage = document.getElementById('jumpscareImage');
-        const background = document.getElementById('background');
-        jumpscareImage.style.visibility = 'visible';
-        jumpscareImage.style.opacity = '1';
-
-        setTimeout(() => {
-            jumpscareImage.style.opacity = '0';
-            setTimeout(() => {
-                jumpscareImage.style.visibility = 'hidden';
-
-                background.style.opacity = '1';
-
-                setTimeout(() => {
-                    background.style.opacity = '0';
-                }, 5000);
-
-            }, 1000); 
-        }, 2000); 
-      }
-    else {
+    } else if (resultadoAleatorio.includes("Internet Explorer")) {
+      exibirJumpscare();
+    } else if (resultadoAleatorio.includes("Passe com sua internet aqui para medirmos sua velocidade!")) {
+      exibirPardal();
+    } else {
       removerEfeitosBugados();
     }
   }, 1000);
@@ -89,5 +73,28 @@ function removerEfeitosBugados() {
   titulo.classList.remove("bugged-title");
   displayVelocidade.classList.remove("bugged-speed");
   body.style.backgroundColor = "#f0f0f0";
-  body.style.backgroundImage = "";
-};
+}
+
+function exibirJumpscare() {
+  jumpscareImage.style.visibility = "visible";
+  jumpscareImage.style.opacity = "1";
+
+  setTimeout(() => {
+    jumpscareImage.style.opacity = "0";
+    setTimeout(() => {
+      jumpscareImage.style.visibility = "hidden";
+    }, 1000);
+  }, 2000);
+}
+
+function exibirPardal() {
+  pardalImage.style.visibility = "visible";
+  pardalImage.style.opacity = "1";
+
+  setTimeout(() => {
+    pardalImage.style.opacity = "0";
+    setTimeout(() => {
+      pardalImage.style.visibility = "hidden";
+    }, 1000);
+  }, 2000);
+}
